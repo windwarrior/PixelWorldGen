@@ -19,6 +19,7 @@ public class PixelWorld extends JavaPlugin {
         conf = new PixelWorldConfig(this.getConfig());
         generator = new PixelWorldGen(conf);
         this.getConfig().options().copyDefaults(true);
+        saveConfig();
     }
 
     @Override
