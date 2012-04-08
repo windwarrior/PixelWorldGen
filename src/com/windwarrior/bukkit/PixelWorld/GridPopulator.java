@@ -1,18 +1,14 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.windwarrior.bukkit.PixelWorld;
 
-import java.util.Map;
-import java.util.Random;
 import org.bukkit.Chunk;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.generator.BlockPopulator;
 
+import java.util.Map;
+import java.util.Random;
+
 /**
- *
  * @author lennart
  */
 public class GridPopulator extends BlockPopulator {
@@ -20,12 +16,13 @@ public class GridPopulator extends BlockPopulator {
     private int height = 0;
     private int maxSize = 0;
     private final int maxSizeInChunks;
+
     public GridPopulator(PixelWorldConfig conf) {
         splitMap = conf.getGridMap();
         height = conf.getGridHeight();
         maxSize = conf.getMaxGridSize();
         maxSizeInChunks = maxSize / 16;
-        
+
     }
 
     @Override
@@ -45,9 +42,9 @@ public class GridPopulator extends BlockPopulator {
 
     /**
      * @param xBlock
-     * @param yBlock
+     * @param zBlock
      * @param size
-     * @param random 
+     * @param random
      */
     private void generateSection(int xBlock, int zBlock, int size, Random random, World world) {
         int newsize = size / 2;
@@ -74,8 +71,8 @@ public class GridPopulator extends BlockPopulator {
 
     public boolean isBorder(int x, int z, int size) {
         return (Math.abs(x) % size == 0
-                || Math.abs(z) % size == 0
-                || Math.abs(x) % size == size - 1
-                || Math.abs(z) % size == size - 1);
+            || Math.abs(z) % size == 0
+            || Math.abs(x) % size == size - 1
+            || Math.abs(z) % size == size - 1);
     }
 }
