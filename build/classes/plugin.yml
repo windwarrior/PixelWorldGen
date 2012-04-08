@@ -1,7 +1,0 @@
-name: PixelWorldGen
-version: 0.1.0
-desciption: Makes a world with special patches made for pixelarts
-load: startup
-authors: [GuntherDW, windwarrior]
-main: com.windwarrior.bukkit.PixelWorld.PixelWorld
-
